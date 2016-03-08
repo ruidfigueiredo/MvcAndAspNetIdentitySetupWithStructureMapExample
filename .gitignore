@@ -1,0 +1,11 @@
+/**/bin/
+/**/obj/
+*.suo
+*.user
+*.db
+AppPackages/
+packages/
+.vs/
+v14/
+*.mdf
+*.ldf

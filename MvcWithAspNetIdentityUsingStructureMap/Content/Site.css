@@ -1,0 +1,30 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.validation-summary-errors ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.validation-summary-errors ul li {
+    border: 1px solid rgb(208, 208, 208);
+    padding: 10px;
+    background-color: #e8152a;
+    color: white;
+    border-radius: 5px;
+}

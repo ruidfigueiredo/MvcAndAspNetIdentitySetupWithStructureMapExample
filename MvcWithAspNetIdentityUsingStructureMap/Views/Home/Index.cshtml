@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityUser>
+
+@if (!Model.Any())
+{
+    <h3>No users</h3>
+}
+else {
+    <div class="row">
+        @foreach (var user in Model)
+        {
+            <div class="col-md-4">
+                <div class="well">
+                    <h4>@user.UserName</h4>
+                    @using (Html.BeginForm("DeleteUser", "Home"))
+                    {
+                        @Html.Hidden("Id", user.Id)
+                        <input type="submit" class="btn btn-link" value="Delete" />
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@using (Html.BeginForm("CreateUser", "Home"))
+{
+    <div class="form-group">
+        <label class="control-label">Username</label>
+        <input type="text" name="username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Password</label>
+        <input type="password" name="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Create" />
+    </div>
+}
+
+
+
+@Html.ValidationSummary(excludePropertyErrors: true)
